@@ -48,10 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GalileoServiceImp.cs" />
     <Compile Include="IGalileoService.cs" />
     <Compile Include="IGetPointer.cs" />
     <Compile Include="IManageGalileoService.cs" />
-    <Compile Include="Model\PoisitionPointer.cs" />
+    <Compile Include="Model\PositionPointer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

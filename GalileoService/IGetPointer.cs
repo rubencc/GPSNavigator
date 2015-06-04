@@ -9,6 +9,6 @@ namespace GalileoService
 {
     public interface IGetPointer
     {
-        PoisitionPointer GetPointer();
+        PositionPointer GetPointer();
     }
 }

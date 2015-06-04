@@ -22,14 +22,14 @@ namespace GPSService
         {
             Random rd = new Random(DateTime.Now.Millisecond);
 
-            return rd.Next(0, 90) + rd.NextDouble();
+            return rd.Next(-90, 90) + rd.NextDouble();
         }
 
         public double GetLongitude()
         {
             Random rd = new Random();
 
-            return rd.Next(0, 180) + rd.NextDouble();
+            return rd.Next(-180, 180) + rd.NextDouble();
         }
 
         public double GetAltitude()

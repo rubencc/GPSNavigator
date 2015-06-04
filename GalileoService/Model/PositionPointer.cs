@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GalileoService.Model
 {
-    public class PoisitionPointer
+    public class PositionPointer
     {
         public double Latitude { get; set; }
         public double Longitude { get; set; }

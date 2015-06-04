@@ -40,6 +40,7 @@ namespace Test.GPSControlModule
         [TestMethod]
         public void Obtener_la_velocidad()
         {
+            this.cm.Start();
             float speed = this.cm.GetSpeed();
 
             Assert.IsFalse(speed < 0, "La velocidad es negativa");
@@ -48,12 +49,20 @@ namespace Test.GPSControlModule
         [TestMethod]
         public void Obtener_la_posicion()
         {
+            this.cm.Start();
             Marker position = this.cm.GetPosition();
 
             Assert.IsNotNull(position, "El objeto de posicion es nulo");
-            Assert.IsFalse(position.Altitude < 0, "La altura es negativa");
-            Assert.IsFalse(position.Latitude < 0, "La latitud es negativa");
-            Assert.IsFalse(position.Longitude < 0, "La longitud es negativa");
+
+            Assert.IsTrue(position.Altitude >= 0, "La altura es negativa");
+            Assert.IsTrue(position.Altitude <= 3000, "La altura supera los 3000m");
+
+            Assert.IsTrue(position.Latitude >= -180, "La latitud es supera los 180º Oeste");
+            Assert.IsTrue(position.Latitude <= 180, "La latitud es supera los 180º Este");
+
+
+            Assert.IsTrue(position.Longitude >= -90, "La longitud es supera los 90º Sur");
+            Assert.IsTrue(position.Longitude <= 90, "La longitud es supera los 90º Norte");
         }
     }
 }
