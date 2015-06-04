@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GPSControlModule.Model;
 using GPSService;
 
+
 namespace GPSControlModule
 {
     public class ControlModule : IControlModule
@@ -13,9 +14,10 @@ namespace GPSControlModule
         private readonly IGPSService service;
         private bool running;
 
-        public ControlModule(IGPSService service)
+        public ControlModule()
         {
-            this.service = service;
+            this.service = new GPSServiceImp();
+            this.running = false;
         }
 
         public bool Start()

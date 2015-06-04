@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GPSService
 {
-    public class GPSService : IGPSService
+    public class GPSServiceImp : IGPSService
     {
         public void Start()
         {
