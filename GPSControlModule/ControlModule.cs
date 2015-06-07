@@ -14,9 +14,9 @@ namespace GPSControlModule
         private readonly IGPSService service;
         private bool running;
 
-        public ControlModule()
+        public ControlModule(IGPSService service)
         {
-            this.service = new GPSServiceImp();
+            this.service = service;
             this.running = false;
         }
 

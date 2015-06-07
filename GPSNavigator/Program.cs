@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Security.Permissions;
 using System.Text;
+using Autofac;
 using GPSControlModule;
+using GPSControlModule.IoCConfigure;
 using GPSControlModule.Model;
+using IoCConfiguration;
 
 
 namespace GPSNavigator
@@ -48,9 +52,25 @@ namespace GPSNavigator
 
         private static IControlModule GetControlModule()
         {
-            IControlModule controlModule = new ControlModule();
+            IContainer builder = ConfigureIoC();
+
+            IControlModule controlModule = builder.Resolve<IControlModule>();
 
             return controlModule;
+        }
+
+        //Configura en el IoC tanto los registros de este proyecto como los de 
+        //los proyectos de los que depende. Excepto los de los servicios
+        //que son tratados como Dll de terceros y por tanto no podemos
+        //como si fueran codigo propio 
+        private static IContainer ConfigureIoC()
+        {
+            ContainerBuilder containerBuilder = new ContainerBuilder();
+            IConfigIoC autofacManager = new AutofacConfigurator(containerBuilder);
+            autofacManager.Configure();
+            IContainer builder = containerBuilder.Build();
+
+            return builder;
         }
 
         private static void Finish(string message)
