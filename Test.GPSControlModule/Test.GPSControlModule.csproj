@@ -54,9 +54,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GalileoService\GalileoService.csproj">
+      <Project>{d2d6db7f-035e-47ef-97bb-886a102f2705}</Project>
+      <Name>GalileoService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GPSControlModule\GPSControlModule.csproj">
       <Project>{7a268972-6487-47b4-9263-dcbb002463dd}</Project>
       <Name>GPSControlModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPSService\GPSService.csproj">
+      <Project>{dd0071c2-504a-486d-bf29-a311a2294c1b}</Project>
+      <Name>GPSService</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

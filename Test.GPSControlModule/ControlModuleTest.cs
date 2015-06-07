@@ -57,12 +57,12 @@ namespace Test.GPSControlModule
             Assert.IsTrue(position.Altitude >= 0, "La altura es negativa");
             Assert.IsTrue(position.Altitude <= 3000, "La altura supera los 3000m");
 
-            Assert.IsTrue(position.Latitude >= -180, "La latitud es supera los 180º Oeste");
-            Assert.IsTrue(position.Latitude <= 180, "La latitud es supera los 180º Este");
+            Assert.IsTrue(position.Latitude >= -90, "La latitud supera los 180º Oeste");
+            Assert.IsTrue(position.Latitude <= 90, "La latitud supera los 180º Este");
 
 
-            Assert.IsTrue(position.Longitude >= -90, "La longitud es supera los 90º Sur");
-            Assert.IsTrue(position.Longitude <= 90, "La longitud es supera los 90º Norte");
+            Assert.IsTrue(position.Longitude >= -180, "La longitud supera los 90º Sur");
+            Assert.IsTrue(position.Longitude <= 180, "La longitud supera los 90º Norte");
         }
     }
 }
