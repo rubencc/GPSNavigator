@@ -1,6 +1,8 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy2;
 using GalileoService;
 using GPSControlModule.Adapter;
+using GPSControlModule.Interceptores;
 using GPSService;
 using IoCConfiguration;
 
@@ -25,7 +27,11 @@ namespace GPSControlModule.IoCConfigure
             this.containerBuilder.RegisterType<GalileoServiceAdapter>().As<IGPSService>();
 
             //Registro del modulo de control
-            this.containerBuilder.RegisterType<ControlModule>().As<IControlModule>();
+            //this.containerBuilder.RegisterType<ControlModule>().As<IControlModule>();
+
+            //Registro del interceptor del modulo de control sobreescribiendo el anterior para añadir la intercepcion
+            this.containerBuilder.Register(i => new ServiceInterceptor());
+            this.containerBuilder.RegisterType<ControlModule>().As<IControlModule>().EnableInterfaceInterceptors();
         }
     }
 }

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GPSControlModule.Model;
 using GPSService;
 
-
 namespace GPSControlModule
 {
+
     public class ControlModule : IControlModule
     {
         private readonly IGPSService service;

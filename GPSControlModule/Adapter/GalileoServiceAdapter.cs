@@ -43,7 +43,7 @@ namespace GPSControlModule.Adapter
         public double GetAltitude()
         {
             PositionPointer pointer = this.galileoService.GetPointer();
-            return pointer.Altitude;
+            return pointer.Altitude <= 3000 ? pointer.Altitude : 3000;
         }
 
         public double GetSpeed()

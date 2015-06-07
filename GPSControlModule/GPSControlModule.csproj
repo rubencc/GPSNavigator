@@ -51,6 +51,7 @@
     <Compile Include="Adapter\GalileoServiceAdapter.cs" />
     <Compile Include="ControlModule.cs" />
     <Compile Include="IControlModule.cs" />
+    <Compile Include="Interceptores\ServiceInterceptor.cs" />
     <Compile Include="IoCConfigure\AutofacConfigurator.cs" />
     <Compile Include="Model\Marker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

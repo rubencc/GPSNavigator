@@ -1,5 +1,7 @@
 ﻿using System;
+using GalileoService;
 using GPSControlModule;
+using GPSControlModule.Adapter;
 using GPSControlModule.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -14,7 +16,7 @@ namespace Test.GPSControlModule
         [TestInitialize]
         public void Setup()
         {
-            this.cm = new ControlModule();
+            this.cm = new ControlModule(new GalileoServiceAdapter(new GalileoServiceImp()));
         }
 
         [TestMethod]
